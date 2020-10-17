@@ -6,6 +6,7 @@
         "start": "node lib/index.js",
         "deploy": "npm run build && gcloud app deploy"
     },
+    "license": "GNU GPLv3",
     "main": "lib/index.js",
     "dependencies": {
         "apollo-server-express": "^2.18.2",
