@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "lib": ["es6", "dom", "esnext.asynciterable"],
+    "module": "commonjs",
+    "noImplicitReturns": false,
+    "outDir": "lib",
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "preserveConstEnums": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "noImplicitAny": false,
+    "isolatedModules": true
+  },
+  "exclude": [
+    "node_modules",
+    "./node_modules",
+    "./node_modules/*",
+    "./node_modules/@types/node/index.d.ts",
+  ]
+}
