@@ -17,15 +17,15 @@ jobs:
     - name: Make envfile
       uses: SpicyPizza/create-envfile@v1
       with:
-        envkey_GCP_PROJECT_ID: $${{ secrets.GCP_PROJECT_ID }}
-        envkey_FIREBASE_CLIENT_EMAIL: $${{ secrets.FIREBASE_CLIENT_EMAIL }}
-        envkey_FIREBASE_PRIVATE_KEY: $${{ secrets.FIREBASE_PRIVATE_KEY }}
-        envkey_FIREBASE_DATABASE_URL: $${{ secrets.FIREBASE_DATABASE_URL }}
-        envkey_FIREBASE_WEB_API_KEY: $${{ secrets.FIREBASE_WEB_API_KEY }}
-        envkey_FIREBASE_AUTH_DOMAIN: $${{ secrets.FIREBASE_AUTH_DOMAIN }}
-        envkey_FIREBASE_STORAGE_BUCKET: $${{ secrets.FIREBASE_STORAGE_BUCKET }}
-        envkey_FIREBASE_FMC_ID: $${{ secrets.FIREBASE_FMC_ID }}
-        envkey_APOLLO_API_KEY: $${{ secrets.APOLLO_API_KEY }}
+        envkey_GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+        envkey_FIREBASE_CLIENT_EMAIL: ${{ secrets.FIREBASE_CLIENT_EMAIL }}
+        envkey_FIREBASE_PRIVATE_KEY: ${{ secrets.FIREBASE_PRIVATE_KEY }}
+        envkey_FIREBASE_DATABASE_URL: ${{ secrets.FIREBASE_DATABASE_URL }}
+        envkey_FIREBASE_WEB_API_KEY: ${{ secrets.FIREBASE_WEB_API_KEY }}
+        envkey_FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
+        envkey_FIREBASE_STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
+        envkey_FIREBASE_FMC_ID: ${{ secrets.FIREBASE_FMC_ID }}
+        envkey_APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
     - name: Setup node
       uses: actions/setup-node@v2-beta
       with:
