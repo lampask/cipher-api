@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup gcloud environment
-    - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
         project_id: ${{ secrets.GCP_PROJECT_ID }}
         service_account_key: ${{ secrets.GCP_SA_KEY }}
@@ -27,7 +27,7 @@ jobs:
         envkey_FIREBASE_FMC_ID: $${{ secrets.FIREBASE_FMC_ID }}
         envkey_APOLLO_API_KEY: $${{ secrets.APOLLO_API_KEY }}
     - name: Setup node
-    - uses: actions/setup-node@v2-beta
+      uses: actions/setup-node@v2-beta
       with:
         node-version: '12'
     - run: yarn install
