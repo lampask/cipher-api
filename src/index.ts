@@ -55,6 +55,11 @@ const server = new ApolloServer({
   debug: true,
 });
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 server.applyMiddleware({ app, path, cors: corsConfig });
 
 http.createServer(app).listen(port, () => console.info(`🚀  Server ready at http://localhost:${port}${path}`));
