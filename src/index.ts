@@ -5,13 +5,14 @@ import { verifyIdToken } from './firebase';
 import * as express from 'express';
 import * as http from 'http';
 import * as dotenv from 'dotenv';
-
+import * as cors from 'cors';
 
 dotenv.config()
 const corsConfig = {
+  origin: 'http://localhost:3000',
   credentials: true,
-  allowedHeaders: ['Authorization', 'Access-Control-Allow-Origin'],
-  exposedHeaders: ['Authorization', 'Access-Control-Allow-Origin'],
+  allowedHeaders: ['Authorization'],
+  exposedHeaders: ['Authorization'],
 };
 
 const schema = makeExecutableSchema({ typeDefs, resolvers });
@@ -49,7 +50,6 @@ const server = new ApolloServer({
         }
       })
     }
-    res.header('Access-Control-Allow-Origin', '*');
   },
   introspection: true,
   playground: true,
