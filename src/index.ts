@@ -24,7 +24,7 @@ const server = new ApolloServer({
   engine: {
     apiKey: process.env.APOLLO_API_KEY
   },
-  context: ({ req }) => {
+  context: ({ req, res }) => {
     // Get the user token from the headers.
     const token = req.headers.authorization || undefined;
     if (token) { 
@@ -49,15 +49,11 @@ const server = new ApolloServer({
         }
       })
     }
+    res.header('Access-Control-Allow-Origin', '*');
   },
   introspection: true,
   playground: true,
   debug: true,
-});
-
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
 });
 
 server.applyMiddleware({ app, path, cors: corsConfig });
