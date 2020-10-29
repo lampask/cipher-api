@@ -10,8 +10,8 @@ import * as dotenv from 'dotenv';
 dotenv.config()
 const corsConfig = {
   credentials: true,
-  allowedHeaders: ['Authorization'],
-  exposedHeaders: ['Authorization'],
+  allowedHeaders: ['Authorization', 'Access-Control-Allow-Origin'],
+  exposedHeaders: ['Authorization', 'Access-Control-Allow-Origin'],
 };
 
 const schema = makeExecutableSchema({ typeDefs, resolvers });
