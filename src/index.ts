@@ -56,6 +56,7 @@ const server = new ApolloServer({
   debug: true,
 });
 
-server.applyMiddleware({ app, path, cors: corsConfig });
+app.use(cors(corsConfig))
+server.applyMiddleware({ app, path, cors: false })
 
-http.createServer(app).listen(port, () => console.info(`🚀  Server ready at http://localhost:${port}${path}`));
+http.createServer(app).listen(port, () => console.info(`🚀  Server ready at http://localhost:${port}${path}`))
