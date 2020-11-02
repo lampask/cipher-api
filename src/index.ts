@@ -11,7 +11,7 @@ dotenv.config()
 const corsConfig = {
   origin: 'http://localhost:3000',
   credentials: true,
-  allowedHeaders: ['Authorization'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   exposedHeaders: ['Authorization'],
 };
 
