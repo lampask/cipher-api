@@ -9,7 +9,12 @@ import * as cors from 'cors';
 
 dotenv.config()
 const corsConfig = {
-  origin: 'http://localhost:3000',
+  origin: function (origin, callback) {
+    let origins = process.env.ORIGIN_HEADERS.split(", ")
+    if (origins.includes(origin)) {
+      return origin
+    }
+  },
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization'],
   exposedHeaders: ['Authorization'],
