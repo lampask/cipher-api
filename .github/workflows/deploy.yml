@@ -35,4 +35,4 @@ jobs:
     #- run: yarn test
     - run: gcloud app deploy -q
     - name: Clean
-    - run: gsutil rm -r gs://eu.artifacts.${{ secrets.GCP_PROJECT_ID }}.appspot.com/containers/images
+      run: gsutil rm -r gs://eu.artifacts.${{ secrets.GCP_PROJECT_ID }}.appspot.com/containers/images
