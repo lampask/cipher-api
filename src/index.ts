@@ -10,9 +10,19 @@ import * as cors from 'cors';
 dotenv.config()
 const corsConfig = {
   origin: function (origin, callback) {
-    let origins = process.env.ORIGIN_HEADERS.split(", ")
+    let origins = []
+    let error = ""
+    try {
+       origins = process.env.ORIGIN_HEADERS.split(", ")
+    } catch(e) {
+      error = e.toString()
+    }
+    console.log(origins)
+    console.log(origin)
     if (origins.includes(origin)) {
-      return origin
+      callback(error, origin)
+    } else {
+      callback(error, "")
     }
   },
   credentials: true,
